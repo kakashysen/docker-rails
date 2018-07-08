@@ -3,7 +3,7 @@
 Boilerplate for Rails projects using Docker.
 
 
-## Building the project
+## Building a normal web project
 
 Run the following command to create a new Rails project scaffold with a postgres database.
 
@@ -17,6 +17,22 @@ gem 'therubyracer', platforms: :ruby
 ```
 
 After that build the project in order to install new Gems.
+
+```bash
+docker-compose build
+```
+
+## Building an API project
+
+Run the following command to create a new API Rails project scaffold with a postgres database.
+
+```bash
+docker-compose run web rails new . --force --database=postgresql --api --skip-action-cable --skip-bundle
+```
+
+If you require websockes you need `ActionCable` so remove `--skip-action-cable`.
+
+After that build the project in order to install gems.
 
 ```bash
 docker-compose build
