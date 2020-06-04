@@ -1,4 +1,4 @@
-# Rails 5 Docker boilerplate
+# Rails 6 Docker boilerplate
 
 Boilerplate for Rails projects using Docker.
 
@@ -10,6 +10,13 @@ Run the following command to create a new Rails project scaffold with a postgres
 ```bash
 docker-compose run web rails new . --force --database=postgresql --skip-bundle
 ```
+or
+
+```bash
+docker-compose run web rails new . --force --no-deps --database=postgresql
+```
+
+Based on [https://docs.docker.com/compose/rails/](https://docs.docker.com/compose/rails/)
 
 In order to have a JavaScript runtime you have to uncomment this line in your Gemfile.
 ```
